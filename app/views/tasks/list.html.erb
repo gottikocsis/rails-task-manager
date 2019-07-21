@@ -1,0 +1,7 @@
+<h1>Here is your list of tasks</h1>
+<h3>Click on the one you want to see in detail</h3>
+<% @tasks.each do |task| %>
+  <p><%= link_to task.title, task_path(task.id) %>  <%= link_to 'EDIT', edit_path(task.id) %>  <%= link_to 'DELETE', delete_path(task), method: :delete %></p>
+<% end %>
+
+<%= link_to 'Back to main page', tasks_path %>
